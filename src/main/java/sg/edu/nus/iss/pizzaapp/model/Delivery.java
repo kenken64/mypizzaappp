@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import jakarta.json.JsonObject;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
@@ -12,6 +11,7 @@ import jakarta.validation.constraints.Size;
 public class Delivery implements Serializable{
     @NotNull(message="Please state your name")
     @Size(min=3, message="Your name cannot be less than 3 chars")
+    @NotBlank(message="Please state your name")
     private String name;
 
     @NotNull(message="Please state your address")
@@ -20,6 +20,7 @@ public class Delivery implements Serializable{
 
     @NotNull(message="Please state your name")
     @Pattern(regexp="^[0-9]{8,}$", message="Must be a valid phone number")
+    @NotBlank(message="Please state your phone")
     private String phone;
 
     private boolean rush = false;
