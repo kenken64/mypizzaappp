@@ -3,6 +3,7 @@ package sg.edu.nus.iss.pizzaapp.model;
 import java.io.Serializable;
 
 import jakarta.json.JsonObject;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -14,7 +15,7 @@ public class Delivery implements Serializable{
     private String name;
 
     @NotNull(message="Please state your address")
-    @NotEmpty(message="Please state your address")
+    @NotBlank(message="Please state your address")
     private String address;
 
     @NotNull(message="Please state your name")
